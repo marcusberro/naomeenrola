@@ -1,0 +1,29 @@
+{
+  "name": "naomeenrola",
+  "version": "1.0.0",
+  "description": "Compara preço de pacotes de papel higiênico",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcusberro/naomeenrola.git"
+  },
+  "keywords": [
+    "AngularJS",
+    "Papel",
+    "Higienico",
+    "Preço"
+  ],
+  "author": "Marcus Berro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcusberro/naomeenrola/issues"
+  },
+  "homepage": "https://github.com/marcusberro/naomeenrola",
+  "dependencies": {
+    "connect": "^3.3.3",
+    "serve-static": "^1.7.1"
+  }
+}
