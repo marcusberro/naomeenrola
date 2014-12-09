@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="roloModule">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Marcus Berro">
+
+    <title>Não Me Enrola</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.3/angular.min.js"></script>
+    <script src="controller/roloCountController.js"></script>
+	
+    <!-- Bootstrap core CSS -->
+    <link href="theme-default/css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+  //.css-form input.ng-invalid.ng-dirty {
+   // background-color: #FA787E;
+ // }
+
+//  .css-form input.ng-valid.ng-dirty {
+  //  background-color: #78FA89;
+  //}
+  </style>
+  </head>
+
+  <body>
+   
+    <!-- Begin page content -->
+    <div class="container">
+		<h2>Não Me Enrola</h2>
+      <div ng-controller="RoloCount">
+		<form name="roloForm" novalidate class="css-form">
+		<div class="well">
+			<input type="text" class="form-control" ng-model="rolo.brand" size="30" placeholder="add marca" required></br>
+			<div class="input-group">
+				<span class="input-group-addon">#</span>
+				<input type="number" class="form-control" ng-model="rolo.amount" size="30" placeholder="add qtd rolos" required></br>
+			</div>
+			</br>
+			<input type="number" class="form-control" ng-model="rolo.size" size="30" placeholder="add tamanho rolo" required></br>
+			<div class="input-group">
+				<span class="input-group-addon">$</span>
+				<input type="number" class="form-control" ng-model="rolo.valuepack" size="30" placeholder="add valor pacote" required>
+			</div>
+		</div>
+		  
+		<div class="well">
+			<a href="" class="btn btn-primary btn-lg btn-block" ng-click="addRoloCount()" ng-disabled="roloForm.$invalid"><span class="glyphicon glyphicon-shopping-cart"></span> Compara</a>
+		</div>
+		</form>
+		<ul class="list-group">
+			<li class="list-group-item list-group-item-default" ng-repeat="rolo in rolos | orderBy: 'valuemeter' ">
+			  {{rolo.brand}} - {{rolo.valuemeter | currency:"R$ ":3}} por metro <span class="btn btn-default btn-xs pull-right"><a href="" data-ng-click="removeRolo($index)">Remove</a></span>
+			</li>
+		</ul>
+		
+		<div class="well">
+        <a href="" class="btn btn-default btn-lg btn-block" ng-click="clearRolos()"><span class="glyphicon glyphicon-trash"></span> Limpar</a>
+		</div>
+    </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="theme-default/js/bootstrap.min.js"></script>
+	
+  </body>
+</html>
